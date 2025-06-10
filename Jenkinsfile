@@ -5,6 +5,7 @@ pipeline {
             steps {
                 dir('/mnt/project') {
                     sh 'rm -rf *'
+                    sh 'docker create volume'
                     checkout scm
                 }
             }
