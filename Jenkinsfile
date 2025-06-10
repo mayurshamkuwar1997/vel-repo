@@ -12,8 +12,7 @@ pipeline {
 
         stage('Making Container and Image') {
             steps {
-                sh 'docker kill httpd-3'
-                sh 'docker rm httpd-3'
+                sh 'docker system prune -a -f'
                 sh 'docker run -dp 91:80 --name httpd-3 httpd'
             }
         }
