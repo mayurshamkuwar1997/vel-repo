@@ -3,7 +3,7 @@ agent any
   stages{
     stage{
       steps('cloning-repository') {
-        dir(/mnt/project-2){
+        dir('/mnt/project-2'){
             sh ' rm -rf * '
              checkout scm
         }
