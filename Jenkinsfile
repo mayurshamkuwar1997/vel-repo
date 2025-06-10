@@ -16,7 +16,6 @@ pipeline {
             steps {
                 sh '''
                 docker run -dp 80:80 --name httpd-1 httpd
-                docker volume create abcd
                 '''
                 
             }
