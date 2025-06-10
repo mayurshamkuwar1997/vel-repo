@@ -12,6 +12,8 @@ pipeline {
 
         stage('Making Container and Image') {
             steps {
+                sh 'docker kill httpd-2'
+                sh 'docker rm httpd-2'
                 sh 'docker run -dp 90:80 --name httpd-2 httpd'
             }
         }
