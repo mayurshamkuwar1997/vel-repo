@@ -15,7 +15,7 @@ agent any
        }
      }
     stage {
-      steps('copying index.html in container) {
+      steps('copying index.html in container') {
         dir('/mnt/project-1') {
           sh 'docker cp index.html httpd-2:/usr/local-apache2/htdocs'
         }
