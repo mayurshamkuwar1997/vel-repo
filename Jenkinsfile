@@ -15,8 +15,6 @@ pipeline {
         stage('Making Container and Image') {
             steps {
                 sh '''
-                docker kill httpd-1
-                docker rm httpd-1
                 docker volume rm abcd
                 docker run -dp 80:80 --name httpd-1 httpd
                 docker volume create abcd
