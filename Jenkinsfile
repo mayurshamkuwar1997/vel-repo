@@ -12,7 +12,7 @@ pipeline {
 
         stage('Making Container and Image') {
             steps {
-                sh 'docker run -dp 90:80 --name httpd-2 httpd'
+               sh ' docker run -dp 90:80 -v server:/usr/local/apache2/htdocs/ --name httpd-1 httpd '
             }
         }
 
