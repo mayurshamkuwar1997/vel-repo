@@ -15,7 +15,8 @@ pipeline {
         stage('Making Container and Image') {
             steps {
                 sh '''
-                docker run -dp 80:80 -v server:/usr/local/apache2/htdocs/ --name httpd-1 httpd
+                docker create volume server
+              docker run -dp 80:80 -v server:/usr/local/apache2/htdocs/ --name httpd-1 httpd
                 '''
                 
             }
